@@ -1,11 +1,11 @@
 {
-	"name": "parcel",
+	"name": "letterbox",
 	"version": "1.0.0",
 	"description": "A database driven application platform using Envelope",
 	"main": "index.js",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/workflowproducts/parcel.git"
+		"url": "git+https://github.com/workflowproducts/letterbox.git"
 	},
 	"keywords": [
 		"envelope",
@@ -16,9 +16,9 @@
 	"author": "Nunzio Tocci <nunzio@workflowproducts.com> (http://www.workflowproducts.com/)",
 	"license": "Apache-2.0",
 	"bugs": {
-		"url": "https://github.com/workflowproducts/parcel/issues"
+		"url": "https://github.com/workflowproducts/letterbox/issues"
 	},
-	"homepage": "https://github.com/workflowproducts/parcel#readme",
+	"homepage": "https://github.com/workflowproducts/letterbox#readme",
 	"dependencies": {
 		"electron-context-menu": "^0.6.0",
 		"electron-window-state": "^3.1.0",
