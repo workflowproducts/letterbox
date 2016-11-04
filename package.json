@@ -22,7 +22,6 @@
 	"dependencies": {
 		"electron-context-menu": "^0.6.0",
 		"electron-window-state": "^3.1.0",
-		"envelope-portable-windows": "^2.1.0",
 		"fs-extra": "^1.0.0",
 		"hidefile": "^2.0.0"
 	},
@@ -30,7 +29,7 @@
 		"electron": "^1.4.5"
 	},
 	"optionalDependencies": {
-		"envelope-portable-windows": "^2.1.0",
+		"envelope-portable-windows": "^2.1.0-build1",
 		"postgresql-portable-windows": "^9.6.0-build1"
 	}
 }
