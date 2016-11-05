@@ -683,9 +683,9 @@ pinkie@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
 
-postgresql-portable-windows:
-  version "9.6.0-build1"
-  resolved "https://registry.yarnpkg.com/postgresql-portable-windows/-/postgresql-portable-windows-9.6.0-build1.tgz#4e185085b859c3e8d6b8e599f966fdaabddc2dc4"
+postgresql-portable-windows@9.6.0-build2:
+  version "9.6.0-build2"
+  resolved "https://registry.yarnpkg.com/postgresql-portable-windows/-/postgresql-portable-windows-9.6.0-build2.tgz#299081352a5f03e5da127d35c8d0a7359f82a076"
 
 pretty-bytes@^1.0.2:
   version "1.0.4"
