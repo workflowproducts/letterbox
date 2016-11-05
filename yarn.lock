@@ -217,9 +217,9 @@ electron-window-state@^3.1.0:
     mkdirp "^0.5.1"
     object-assign "^4.0.1"
 
-envelope-portable-windows:
-  version "2.1.0-build1"
-  resolved "https://registry.yarnpkg.com/envelope-portable-windows/-/envelope-portable-windows-2.1.0-build1.tgz#b591fd7e66820555ec952a23ca30c3a965b7f303"
+envelope-portable-windows@2.1.0-build2:
+  version "2.1.0-build2"
+  resolved "https://registry.yarnpkg.com/envelope-portable-windows/-/envelope-portable-windows-2.1.0-build2.tgz#8cfd58bb1bde7ac3280d22f2fc33e6a031526184"
 
 error-ex@^1.2.0:
   version "1.3.0"
@@ -683,7 +683,7 @@ pinkie@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
 
-postgresql-portable-windows@9.6.0-build2:
+postgresql-portable-windows@^9.6.0-build1:
   version "9.6.0-build2"
   resolved "https://registry.yarnpkg.com/postgresql-portable-windows/-/postgresql-portable-windows-9.6.0-build2.tgz#299081352a5f03e5da127d35c8d0a7359f82a076"
 
