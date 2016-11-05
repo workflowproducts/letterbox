@@ -23,10 +23,9 @@ const envelope_module_name = 'node_modules/envelope-portable-' + (os.platform() 
 function spawnEnvelope(strAppName, callback) {
 	envelopeProc = child_process.spawn(
 		path.normalize(app.getAppPath() + '/' + envelope_module_name + '/bin/envelope' + (process.platform == 'win32' ? '.exe' : '')), [
-			'-c', path.normalize(app.getAppPath() + '/envelope/config/envelope.conf'),
 			'-d', path.normalize(os.homedir() + '/.' + strAppName + '/envelope-connections.conf'),
-			'-r', path.normalize(app.getAppPath() + '/envelope/web_root'),
-			'-y', path.normalize(app.getAppPath() + '/envelope/app'),
+			'-r', path.normalize(app.getAppPath() + '/web_root'),
+			'-y', path.normalize(app.getAppPath() + '/app'),
 			//'-z', path.normalize(app.getAppPath() + '/envelope/role'),
 			'-x', 't',
 			'-p', int_envelope_port,
