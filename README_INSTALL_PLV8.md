@@ -35,11 +35,11 @@ git clone https://github.com/plv8/plv8.git
 mv ./build/v8-git-mirror-5.1.281.14/third_party/binutils/Linux_x64/Release/bin/ld.gold ./build/v8-git -mirror-5.1.281.14/third_party/binutils/Linux_x64/Release/bin/ld.gold.OLD
 ln -s /usr/bin/ld.gold ./build/v8-git-mirror-5.1.281.14/third_party/binutils/Linux_x64/Release/bin/ld.gold
 
-#define delete    delete_
-//#define namespace namespace_
-#define typeid    typeid_
-//#define typename  typename_
-//#define using   using_
+leave>   #define delete    delete_
+comment> //#define namespace namespace_
+leave>   #define typeid    typeid_
+comment> //#define typename  typename_
+comment> //#define using   using_
 
 to the following files:
 
