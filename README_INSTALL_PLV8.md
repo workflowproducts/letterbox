@@ -49,4 +49,20 @@ plv8_type.cc
 plv8_func.cc
 
 make static
+make install
+
+chown super /var/run/postgresql
+initdb -D data -UTF8 -U postgres
+pg_ctl -D data startpg_ctl -D data start
+psql --host=127.0.0.1 -U postgres
+
+CREATE EXTENSION plv8;
+
+
+
+
+
+
+
+
 
