@@ -29,6 +29,9 @@
     "electron": "^1.4.5"
   },
   "optionalDependencies": {
+    "envelope-portable-darwin64": "^2.1.0",
+    "envelope-portable-linux32": "^2.1.0",
+    "envelope-portable-linux64": "^2.1.0",
     "envelope-portable-windows": "2.1.0-build2",
     "postgresql-portable-darwin64": "^9.6.0",
     "postgresql-portable-linux32": "^9.6.0",
