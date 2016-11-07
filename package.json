@@ -1,6 +1,6 @@
 {
   "name": "letterbox",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A database driven application platform using Envelope",
   "main": "index.js",
   "repository": {
