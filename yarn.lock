@@ -217,17 +217,17 @@ electron@^1.4.5:
     electron-download "^3.0.1"
     extract-zip "^1.0.3"
 
-envelope-portable-darwin64:
+envelope-portable-darwin64@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/envelope-portable-darwin64/-/envelope-portable-darwin64-2.1.0.tgz#f28008e8673e1ce7361e99949f593d0ac771970a"
 
-envelope-portable-linux32:
+envelope-portable-linux32@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/envelope-portable-linux32/-/envelope-portable-linux32-2.1.0.tgz#22611428ddbefcece3180bcf888ba804e3d70d41"
 
-envelope-portable-linux64:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/envelope-portable-linux64/-/envelope-portable-linux64-2.1.0.tgz#d345885e2ce1ff00fb46d5eaa84231876b03dbcf"
+envelope-portable-linux64@2.1.0-build1:
+  version "2.1.0-build1"
+  resolved "https://registry.yarnpkg.com/envelope-portable-linux64/-/envelope-portable-linux64-2.1.0-build1.tgz#442372f50309b9be0b19af6f61d36c4331e8478f"
 
 envelope-portable-windows@2.1.0-build2:
   version "2.1.0-build2"
