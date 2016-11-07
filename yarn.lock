@@ -217,13 +217,13 @@ electron@^1.4.5:
     electron-download "^3.0.1"
     extract-zip "^1.0.3"
 
-envelope-portable-darwin64@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/envelope-portable-darwin64/-/envelope-portable-darwin64-2.1.0.tgz#f28008e8673e1ce7361e99949f593d0ac771970a"
+envelope-portable-darwin64@2.1.0-build1:
+  version "2.1.0-build1"
+  resolved "https://registry.yarnpkg.com/envelope-portable-darwin64/-/envelope-portable-darwin64-2.1.0-build1.tgz#f4403ff7752d0ea52a785ce7d4ed773e9643edb1"
 
-envelope-portable-linux32@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/envelope-portable-linux32/-/envelope-portable-linux32-2.1.0.tgz#22611428ddbefcece3180bcf888ba804e3d70d41"
+envelope-portable-linux32@2.1.0-build1:
+  version "2.1.0-build1"
+  resolved "https://registry.yarnpkg.com/envelope-portable-linux32/-/envelope-portable-linux32-2.1.0-build1.tgz#bc4e0481163a80f7a70d03eb860e82e3a18eabf7"
 
 envelope-portable-linux64@2.1.0-build1:
   version "2.1.0-build1"
@@ -695,17 +695,17 @@ pinkie@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
 
-postgresql-portable-darwin64@^9.6.0:
-  version "9.6.0"
-  resolved "https://registry.yarnpkg.com/postgresql-portable-darwin64/-/postgresql-portable-darwin64-9.6.0.tgz#e906bdee7c93307fe6259989479fba04d6db6080"
+postgresql-portable-darwin64@9.6.0-build1:
+  version "9.6.0-build1"
+  resolved "https://registry.yarnpkg.com/postgresql-portable-darwin64/-/postgresql-portable-darwin64-9.6.0-build1.tgz#df1242a0b48e30ac12192c949544d4ec79fc6c43"
 
-postgresql-portable-linux32@^9.6.0:
-  version "9.6.0"
-  resolved "https://registry.yarnpkg.com/postgresql-portable-linux32/-/postgresql-portable-linux32-9.6.0.tgz#d2c72e587df5c93d080448832131627646185375"
+postgresql-portable-linux32@9.6.0-build1:
+  version "9.6.0-build1"
+  resolved "https://registry.yarnpkg.com/postgresql-portable-linux32/-/postgresql-portable-linux32-9.6.0-build1.tgz#282e99e4c195a4a024ba16b34a01d2322b2eaa97"
 
-postgresql-portable-linux64@^9.6.0:
-  version "9.6.0"
-  resolved "https://registry.yarnpkg.com/postgresql-portable-linux64/-/postgresql-portable-linux64-9.6.0.tgz#28ff8a0e9ac0f47c32cfed2235c3864aabc5b4b9"
+postgresql-portable-linux64@9.6.0-build1:
+  version "9.6.0-build1"
+  resolved "https://registry.yarnpkg.com/postgresql-portable-linux64/-/postgresql-portable-linux64-9.6.0-build1.tgz#16b32c8a00b3e5931bc96dd17a6aa03f6891900f"
 
 postgresql-portable-windows@9.6.0-build2:
   version "9.6.0-build2"
