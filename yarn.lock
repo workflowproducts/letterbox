@@ -170,13 +170,6 @@ ecc-jsbn@~0.1.1:
   dependencies:
     jsbn "~0.1.0"
 
-electron:
-  version "1.4.5"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-1.4.5.tgz#829c4884d641d88398805a7f94a37ec432a00bf3"
-  dependencies:
-    electron-download "^3.0.1"
-    extract-zip "^1.0.3"
-
 electron-context-menu@^0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/electron-context-menu/-/electron-context-menu-0.6.0.tgz#983c3b129ab4d558db32a1e261f1c28b4d33c1c4"
@@ -216,6 +209,13 @@ electron-window-state@^3.1.0:
     jsonfile "^2.2.3"
     mkdirp "^0.5.1"
     object-assign "^4.0.1"
+
+electron@^1.4.5:
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-1.4.5.tgz#829c4884d641d88398805a7f94a37ec432a00bf3"
+  dependencies:
+    electron-download "^3.0.1"
+    extract-zip "^1.0.3"
 
 envelope-portable-windows@2.1.0-build2:
   version "2.1.0-build2"
@@ -683,7 +683,19 @@ pinkie@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
 
-postgresql-portable-windows@^9.6.0-build1:
+postgresql-portable-darwin64@^9.6.0:
+  version "9.6.0"
+  resolved "https://registry.yarnpkg.com/postgresql-portable-darwin64/-/postgresql-portable-darwin64-9.6.0.tgz#e906bdee7c93307fe6259989479fba04d6db6080"
+
+postgresql-portable-linux32@^9.6.0:
+  version "9.6.0"
+  resolved "https://registry.yarnpkg.com/postgresql-portable-linux32/-/postgresql-portable-linux32-9.6.0.tgz#d2c72e587df5c93d080448832131627646185375"
+
+postgresql-portable-linux64@^9.6.0:
+  version "9.6.0"
+  resolved "https://registry.yarnpkg.com/postgresql-portable-linux64/-/postgresql-portable-linux64-9.6.0.tgz#28ff8a0e9ac0f47c32cfed2235c3864aabc5b4b9"
+
+postgresql-portable-windows@9.6.0-build2:
   version "9.6.0-build2"
   resolved "https://registry.yarnpkg.com/postgresql-portable-windows/-/postgresql-portable-windows-9.6.0-build2.tgz#299081352a5f03e5da127d35c8d0a7359f82a076"
 
