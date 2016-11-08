@@ -695,22 +695,6 @@ pinkie@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
 
-postgresql-portable-darwin64@9.6.0-build2:
-  version "9.6.0-build2"
-  resolved "https://registry.yarnpkg.com/postgresql-portable-darwin64/-/postgresql-portable-darwin64-9.6.0-build2.tgz#7bc79c7651bac971f6943fef40eda9e62025c364"
-
-postgresql-portable-linux32@9.6.0-build2:
-  version "9.6.0-build2"
-  resolved "https://registry.yarnpkg.com/postgresql-portable-linux32/-/postgresql-portable-linux32-9.6.0-build2.tgz#6749856cb2f1b52cc99366d494f86b46ba69504f"
-
-postgresql-portable-linux64@9.6.0-build2:
-  version "9.6.0-build2"
-  resolved "https://registry.yarnpkg.com/postgresql-portable-linux64/-/postgresql-portable-linux64-9.6.0-build2.tgz#ed336cf1c5ee3616487b995a2a1bf0d8ef078a93"
-
-postgresql-portable-windows@9.6.0-build2:
-  version "9.6.0-build2"
-  resolved "https://registry.yarnpkg.com/postgresql-portable-windows/-/postgresql-portable-windows-9.6.0-build2.tgz#299081352a5f03e5da127d35c8d0a7359f82a076"
-
 pretty-bytes@^1.0.2:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/pretty-bytes/-/pretty-bytes-1.0.4.tgz#0a22e8210609ad35542f8c8d5d2159aff0751c84"
