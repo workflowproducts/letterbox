@@ -219,18 +219,21 @@ exports.init = function (strAppName, callback) {
 									});
 								});
 
-								var pipe = net.connect('\\\\.\\pipe\\pgsignal_' + postgresqlProc.pid, function () {
-									var uint8Data = new Uint8Array(1),
-										data = new Buffer(uint8Data.buffer);
-									uint8Data[0] = 15; // SIGTERM
-									pipe.on('error', function () {
-										console.log('error', arguments);
-									});
+								if (process.platform === 'win32') {
+									var pipe = net.connect('\\\\.\\pipe\\pgsignal_' + postgresqlProc.pid, function () {
+										var uint8Data = new Uint8Array(1),
+											data = new Buffer(uint8Data.buffer);
+										uint8Data[0] = 15; // SIGTERM
+										pipe.on('error', function () {
+											console.log('error', arguments);
+										});
 
-									pipe.write(data);
-									pipe.end();
-								});
-								//postgresqlProc.kill();
+										pipe.write(data);
+										pipe.end();
+									});
+								} else {
+									postgresqlProc.kill();
+								}
 							});
 						}
 					});
@@ -246,16 +249,20 @@ exports.init = function (strAppName, callback) {
 exports.quit = function () {
 	console.log('quitting');
 	envelopeProc.kill();
-	var pipe = net.connect('\\\\.\\pipe\\pgsignal_' + postgresqlProc.pid, function () {
-		var uint8Data = new Uint8Array(1),
-			data = new Buffer(uint8Data.buffer);
-		uint8Data[0] = 15; // SIGTERM
-		pipe.on('error', function () {
-			console.log('error', arguments);
-		});
+	if (process.platform === 'win32') {
+		var pipe = net.connect('\\\\.\\pipe\\pgsignal_' + postgresqlProc.pid, function () {
+			var uint8Data = new Uint8Array(1),
+				data = new Buffer(uint8Data.buffer);
+			uint8Data[0] = 15; // SIGTERM
+			pipe.on('error', function () {
+				console.log('error', arguments);
+			});
 
-		pipe.write(data);
-		pipe.end();
-	});
+			pipe.write(data);
+			pipe.end();
+		});
+	} else {
+		postgresqlProc.kill();
+	}
 	process.exit();
 };
