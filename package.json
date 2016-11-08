@@ -33,9 +33,9 @@
     "envelope-portable-linux32": "2.1.0-build1",
     "envelope-portable-linux64": "2.1.0-build1",
     "envelope-portable-windows": "2.1.0-build2",
-    "postgresql-portable-darwin64": "9.6.0-build1",
-    "postgresql-portable-linux32": "9.6.0-build1",
-    "postgresql-portable-linux64": "9.6.0-build1",
+    "postgresql-portable-darwin64": "9.6.0-build2",
+    "postgresql-portable-linux32": "9.6.0-build2",
+    "postgresql-portable-linux64": "9.6.0-build2",
     "postgresql-portable-windows": "9.6.0-build2"
   }
 }
