@@ -57,7 +57,9 @@ exports.init = function (strAppName, strPostgresHost, intPostgresPort, callback)
 		spawnEnvelope(strAppName, callback);
 	} catch (e) {
 		fs.mkdirsSync(os.homedir() + '/.' + strAppName + '/');
-		hidefile.hideSync(os.homedir() + '/.' + strAppName + '/');
+		if (!hidefile.isHiddenSync(os.homedir() + '/.' + strAppName + '/')) {
+			hidefile.hideSync(os.homedir() + '/.' + strAppName + '/');
+		}
 
 		fs.writeFileSync(
 			path.normalize(os.homedir() + '/.' + strAppName + '/envelope-connections.conf'),
