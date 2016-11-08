@@ -37,6 +37,7 @@ Start with Fedora 24 - x86_64 and PostgreSQL 9.6
     mv ./build/v8-git-mirror-5.1.281.14/third_party/binutils/Linux_x64/Release/bin/ld.gold ./build/v8-git -mirror-5.1.281.14/third_party/binutils/Linux_x64/Release/bin/ld.gold.OLD
     ln -s /usr/bin/ld.gold ./build/v8-git-mirror-5.1.281.14/third_party/binutils/Linux_x64/Release/bin/ld.gold
 
+Now make the following changes:
 
     #define delete    delete_
     //#define namespace namespace_
@@ -46,19 +47,21 @@ Start with Fedora 24 - x86_64 and PostgreSQL 9.6
 
 to the following files:
 
-plv8.cc
-plv8_type.cc
-plv8_func.cc
+    plv8.cc
+    plv8_type.cc
+    plv8_func.cc
 
-make static
-make install
+Back to commands:
 
-chown super /var/run/postgresql
-initdb -D data -UTF8 -U postgres
-pg_ctl -D data startpg_ctl -D data start
-psql --host=127.0.0.1 -U postgres
+    make static
+    make install
 
-CREATE EXTENSION plv8;
+    chown super /var/run/postgresql
+    initdb -D data -UTF8 -U postgres
+    pg_ctl -D data startpg_ctl -D data start
+    psql --host=127.0.0.1 -U postgres
+
+    CREATE EXTENSION plv8;
 
 
 
