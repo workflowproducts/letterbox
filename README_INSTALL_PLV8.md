@@ -44,6 +44,16 @@ Back to commands:
 
     CREATE EXTENSION plv8;
 
-    
+CREATE EXTENSION plv8;
+
+CREATE FUNCTION test_v8(text)
+  RETURNS text as 
+$BODY$
+  return $1.substring(0,5);
+$BODY$ 
+LANGUAGE plv8;
+
+SELECT test_v8('1234567890'); // should return 12345
+
 
 
