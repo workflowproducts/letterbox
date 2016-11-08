@@ -4,7 +4,7 @@ A database driven application platform leveraging Electron, Envelope and Postgre
 ### What is Letterbox
 Letterbox is a tool for developers that makes writing and distributing database driven applications easy!
 
-Letterbox makes it easy to build database apps. Programs for business, like accounting or inventory. Once you've written your application, Letterbox helps you package your app for Linux, Mac and Windows computers. When users go to open your app, Letterbox will manage starting PostgeSQL and Envelope.
+Letterbox makes it easy to build database apps. Programs for business, like accounting or inventory. Once you've written your application, Letterbox helps you package your app for Linux, Mac and Windows computers. When users go to open your app, Letterbox will manage starting Envelope.
 
 In order to accomplish all this magic, Letterbox makes several interesting choices to bring together an application stack. But although a lot of work went into Letterbox, it would not have been possible without the following projects:
 
