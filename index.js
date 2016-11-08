@@ -56,6 +56,9 @@ exports.init = function (strAppName, strPostgresHost, intPostgresPort, callback)
 		// Spawn Envelope
 		spawnEnvelope(strAppName, callback);
 	} catch (e) {
+		fs.mkdirsSync(os.homedir() + '/.' + strAppName + '/');
+		hidefile.hideSync(os.homedir() + '/.' + strAppName + '/');
+
 		fs.writeFileSync(
 			path.normalize(os.homedir() + '/.' + strAppName + '/envelope-connections.conf'),
 			'data:  host=' + strPostgresHost + ' port=' + intPostgresPort + ' dbname=postgres'
