@@ -8,33 +8,36 @@ http://www.php-javascript.com/documentation/v8
 
 ### What worked for me:
 Start with Fedora 24 - x86_64 and PostgreSQL 9.6
-dnf update
-dnf install git
-dnf install ncurses-compat-libs
-git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git 
 
-export PATH=`pwd`/depot_tools:"$PATH"
+    dnf update
+    dnf install git
+    dnf install ncurses-compat-libs
 
-fetch v8
-cd v8
+    git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git 
 
-git checkout 5.6.184
+    export PATH=`pwd`/depot_tools:"$PATH"
 
-cp -rf buildtools/third_party/libc++/trunk/include/* testing/gtest/include/
-cp -rf buildtools/third_party/libc++abi/trunk/include/* testing/gtest/include/
-make library=shared i18nsupport=off strictaliasing=off native -j6
+    fetch v8
+    cd v8
 
-cp include/*.h /usr/include
-cp out/native/lib.target/libv8.so /usr/lib
+    git checkout 5.6.184
 
-cd ..
-dnf install g++
-dnf install redhat-rpm-config
-git clone https://github.com/plv8/plv8.git
+    cp -rf buildtools/third_party/libc++/trunk/include/* testing/gtest/include/
+    cp -rf buildtools/third_party/libc++abi/trunk/include/* testing/gtest/include/
+    make library=shared i18nsupport=off strictaliasing=off native -j6
 
-mv ./build/v8-git-mirror-5.1.281.14/third_party/binutils/Linux_x64/Release/bin/ld.gold ./build/v8-git -mirror-5.1.281.14/third_party/binutils/Linux_x64/Release/bin/ld.gold.OLD
-ln -s /usr/bin/ld.gold ./build/v8-git-mirror-5.1.281.14/third_party/binutils/Linux_x64/Release/bin/ld.gold
+    cp include/*.h /usr/include
+    cp out/native/lib.target/libv8.so /usr/lib
 
+    cd ..
+    dnf install g++
+    dnf install redhat-rpm-config
+    git clone https://github.com/plv8/plv8.git
+
+    mv ./build/v8-git-mirror-5.1.281.14/third_party/binutils/Linux_x64/Release/bin/ld.gold ./build/v8-git -mirror-5.1.281.14/third_party/binutils/Linux_x64/Release/bin/ld.gold.OLD
+    ln -s /usr/bin/ld.gold ./build/v8-git-mirror-5.1.281.14/third_party/binutils/Linux_x64/Release/bin/ld.gold
+
+Now make the following changes:
 
     #define delete    delete_
     //#define namespace namespace_
@@ -44,19 +47,21 @@ ln -s /usr/bin/ld.gold ./build/v8-git-mirror-5.1.281.14/third_party/binutils/Lin
 
 to the following files:
 
-plv8.cc
-plv8_type.cc
-plv8_func.cc
+    plv8.cc
+    plv8_type.cc
+    plv8_func.cc
 
-make static
-make install
+Back to commands:
 
-chown super /var/run/postgresql
-initdb -D data -UTF8 -U postgres
-pg_ctl -D data startpg_ctl -D data start
-psql --host=127.0.0.1 -U postgres
+    make static
+    make install
 
-CREATE EXTENSION plv8;
+    chown super /var/run/postgresql
+    initdb -D data -UTF8 -U postgres
+    pg_ctl -D data startpg_ctl -D data start
+    psql --host=127.0.0.1 -U postgres
+
+    CREATE EXTENSION plv8;
 
 
 
