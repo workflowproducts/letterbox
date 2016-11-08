@@ -19,10 +19,54 @@ Envelope helps you publish web apps based on your PostgreSQL database. It includ
 
 Letterbox is still pre-release. Please ignore it for now.
 
+# Getting Started
+
+There are two functions in Letterbox:
+
+`letterbox.init(appName, postgresHost, postgresPort, callback)`
+- **appName**
+ - Letterbox uses this to create a folder to hold the configuration file for envelope
+- **postgresHost**
+ - Letterbox uses this to tell envelope how to connect to postgres
+- **postgresPort**
+ - Letterbox uses this to tell envelope how to connect to postgres
+- **callback(envelopePort)**
+ - This function will be called after envelope has started up, the `envelopePort` argument will allow you to tell Electron where to go
 
 
+`letterbox.quit()`
+- You need to call this function when the process is going to exit. If you don't then envelope will keep running and you won't be able to start it the next time.
 
+### Full example
 
+	const letterbox = require('letterbox');
+	const electron = require('electron');
+	const app = electron.app;
+	const BrowserWindow = electron.BrowserWindow;
 
+	let mainWindows = [];
 
+	app.on('ready', function () {
+		var curWindow = new BrowserWindow({
+			'width': 1024,
+			'height': 768
+		});
+		mainWindows.push(curWindow);
+		letterbox.init('letterbox-example', 'yourdomain.com', '5432',
+				function (envelopePort) {
 
+			curWindow.loadURL('http://127.0.0.1:' + envelopePort, {
+				'extraHeaders': 'pragma: no-cache\n'
+			});
+		});
+
+		// Emitted when the window is closed.
+		curWindow.on('closed', function() {
+			mainWindows.splice(mainWindows.indexOf(curWindow), 1);
+		});
+	});
+
+	app.on('quit', function() {
+		letterbox.quit();
+	});
+  
