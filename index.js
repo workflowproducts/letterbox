@@ -11,8 +11,6 @@ const app = electron.app;
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow;
 
-const int_envelope_port = parseInt(Math.random().toString().substring(2)) % (65535 - 1024) + 1024;
-
 const child_process = require('child_process');
 var envelopeProc = null;
 
@@ -21,12 +19,12 @@ const envelope_module_name = 'node_modules/envelope-portable-' + (os.platform() 
 function spawnEnvelope(strAppName, callback) {
 	envelopeProc = child_process.spawn(
 		path.normalize(app.getAppPath() + '/' + envelope_module_name + '/bin/envelope' + (process.platform == 'win32' ? '.exe' : '')), [
+			'-c', path.normalize(os.homedir() + '/.' + strAppName + '/envelope.conf'),
 			'-d', path.normalize(os.homedir() + '/.' + strAppName + '/envelope-connections.conf'),
 			'-r', path.normalize(app.getAppPath() + '/web_root'),
 			'-y', path.normalize(app.getAppPath() + '/app'),
 			//'-z', path.normalize(app.getAppPath() + '/envelope/role'),
 			'-x', 't',
-			'-p', int_envelope_port,
 			(process.platform == 'win32' ? '-o' : ''), (process.platform == 'win32' ? 'stderr' : '')
 		], {
 			detached: true
@@ -37,7 +35,12 @@ function spawnEnvelope(strAppName, callback) {
 	envelopeProc.stdout.on('data', function(data) {
 		console.log('envelope ' + envelopeProc.pid + ' got data (stdout):\n' + data);
 		if (data.indexOf('<this computer\'s ip>') > -1) {
-			callback(int_envelope_port);
+			callback(
+				parseInt(
+					fs.readFileSync(path.normalize(os.homedir() + '/.' + strAppName + '/envelope.conf')).substring(17),
+					10
+				)
+			);
 		}
 	});
 	envelopeProc.stderr.on('data', function(data) {
@@ -61,6 +64,12 @@ exports.init = function (strAppName, strPostgresHost, intPostgresPort, callback)
 			hidefile.hideSync(os.homedir() + '/.' + strAppName + '/');
 		}
 
+		var int_envelope_port = parseInt(Math.random().toString().substring(2)) % (65535 - 1024) + 1024;
+
+		fs.writeFileSync(
+			path.normalize(os.homedir() + '/.' + strAppName + '/envelope.conf'),
+			'envelope_port = ' + int_envelope_port
+		);
 		fs.writeFileSync(
 			path.normalize(os.homedir() + '/.' + strAppName + '/envelope-connections.conf'),
 			'data:  host=' + strPostgresHost + ' port=' + intPostgresPort + ' dbname=postgres'
