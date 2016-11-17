@@ -36,10 +36,7 @@ function spawnEnvelope(strAppName, callback) {
 		console.log('envelope ' + envelopeProc.pid + ' got data (stdout):\n' + data);
 		if (data.indexOf('<this computer\'s ip>') > -1) {
 			callback(
-				parseInt(
-					fs.readFileSync(path.normalize(os.homedir() + '/.' + strAppName + '/envelope.conf')).substring(17),
-					10
-				)
+				parseInt(fs.readFileSync(path.normalize(os.homedir() + '/.' + strAppName + '/envelope.conf')).toString().substring(17), 10)
 			);
 		}
 	});
