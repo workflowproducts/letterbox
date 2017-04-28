@@ -25,7 +25,7 @@ function spawnEnvelope(strAppName, callback) {
 			'-y', path.normalize(app.getAppPath() + '/app'),
 			//'-z', path.normalize(app.getAppPath() + '/envelope/role'),
 			'-x', 't',
-			'-g', '',
+			'-g', 'envelope_g',
 			(process.platform == 'win32' ? '-o' : ''), (process.platform == 'win32' ? 'stderr' : '')
 		], {
 			detached: true
