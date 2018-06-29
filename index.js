@@ -14,19 +14,19 @@ const BrowserWindow = electron.BrowserWindow;
 const child_process = require('child_process');
 var envelopeProc = null;
 
-const envelope_module_name = 'node_modules/envelope-portable-' + (os.platform() != 'win32' ? (os.platform() + (os.arch() === 'x64' ? '64' : '32')) : 'windows');
+const envelope_module_name = 'node_modules/envelope-portable-' + (os.platform() !== 'win32' ? (os.platform() + (os.arch() === 'x64' ? '64' : '32')) : 'windows');
 
-function spawnEnvelope(strAppName, callback) {
+function spawnEnvelope(strAppName, callback, bolAllowExternal) {
 	envelopeProc = child_process.spawn(
-		path.normalize(app.getAppPath() + '/' + envelope_module_name + '/bin/envelope' + (process.platform == 'win32' ? '.exe' : '')), [
+		path.normalize(app.getAppPath() + '/' + envelope_module_name + '/bin/envelope' + (process.platform === 'win32' ? '.exe' : '')), [
 			'-c', path.normalize(os.homedir() + '/.' + strAppName + '/envelope.conf'),
 			'-d', path.normalize(os.homedir() + '/.' + strAppName + '/envelope-connections.conf'),
 			'-r', path.normalize(app.getAppPath() + '/web_root'),
 			'-y', path.normalize(app.getAppPath() + '/app'),
-			//'-z', path.normalize(app.getAppPath() + '/envelope/role'),
-			'-x', 't',
+			'-z', path.normalize(app.getAppPath() + '/role'),
+			(bolAllowExternal ? '' : '-x'), (bolAllowExternal ? '' : 't'),
 			'-g', 'envelope_g',
-			(process.platform == 'win32' ? '-o' : ''), (process.platform == 'win32' ? 'stderr' : '')
+			(process.platform === 'win32' ? '-o' : ''), (process.platform === 'win32' ? 'stderr' : '')
 		], {
 			detached: true
 		}
@@ -49,13 +49,13 @@ function spawnEnvelope(strAppName, callback) {
 	});
 }
 
-exports.init = function (strAppName, strPostgresHost, intPostgresPort, callback) {
+exports.init = function (strAppName, strPostgresHost, intPostgresPort, callback, bolAllowExternal) {
 	try {
 		// Check for envelope-connections.conf
 		fs.statSync(os.homedir() + '/.' + strAppName + '/envelope-connections.conf');
 
 		// Spawn Envelope
-		spawnEnvelope(strAppName, callback);
+		spawnEnvelope(strAppName, callback, bolAllowExternal);
 	} catch (e) {
 		fs.mkdirsSync(os.homedir() + '/.' + strAppName + '/');
 		if (!hidefile.isHiddenSync(os.homedir() + '/.' + strAppName + '/')) {
